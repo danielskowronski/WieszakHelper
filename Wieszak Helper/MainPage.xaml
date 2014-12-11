@@ -1,0 +1,58 @@
+﻿<Page
+	x:Class="Wieszak_Helper.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:Wieszak_Helper"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar x:Name="myCommandBar" >
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="nazad_abb" Icon="Back" Label="previous" Click="pokaz_poprzedni"/>
+                <AppBarButton x:Name="przypnij_abb" Icon="Pin" Label="pin live tile" Click="przypnij"/>
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="enable afternoon auto-clear" Icon="Important" Click="AppBarButton2_Click" x:Name="appbar_autoclear"/>
+                <AppBarButton Label="about" Icon="Important" Click="AppBarButton_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid GotFocus="numere_focus" LostFocus="numere_unfocus">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Resources/wieszaki_dociete_hd.png" Opacity="0.4"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="0,300,0,0" TextWrapping="Wrap" Text="Wieszak Helper" VerticalAlignment="Top" Width="300" Height="36" FontSize="29.333" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="191" FontSize="18.667" TextAlignment="Justify">
+			<Run Text="Just type your "/>
+			<Run Text="hanger number here - it will be stored automagically"/>
+			<Run Text="."/>
+			<LineBreak/>
+			<Run Text="When you (as always) forget it you can find it here and"/>
+			<Run Text=" "/>
+			<Run Text="on Live Tile. "/>
+			<LineBreak/>
+			<Run/>
+			<LineBreak/>
+			<Run Text="You can "/>
+			<Run Text="also "/>
+			<Run Text="check numbers history."/>
+			<Run Text=" "/>
+			<Run Text="Try "/>
+			<Run Text="afternoon "/>
+			<Run Text="auto-clear option too :)"/>
+			<LineBreak/>
+			<Run/>
+        </TextBlock> 
+        <TextBox x:Name="numerek" HorizontalAlignment="Center" Margin="50,50,50,0" Text="404" 
+        	VerticalAlignment="Top" Height="205" FontSize="165" FontFamily="Global User Interface" Foreground="Black" 
+        	InputScope="Number" PlaceholderText="" Width="300" TextChanged="numere_zmienione" TextAlignment="Center" IsTextPredictionEnabled="False">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.4"/>
+            </TextBox.Background>
+        </TextBox>
+    </Grid>
+</Page>
